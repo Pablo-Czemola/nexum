@@ -1,0 +1,564 @@
+/* Paleta de cores */
+:root {
+    --primary-color: #7E84F2;
+    --secondary-color: #2C96BF;
+    --tertiary-color: #82C9D9;
+    --light-bg: #CEECF2;
+    --dark-bg: #0D0D0D;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-bg);
+}
+
+/* ---------------- NAVBAR ---------------- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Menu responsivo */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+}
+
+/* ---------------- MAIN CONTENT (USANDO GRID) ---------------- */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas iguais */
+    gap: 20px;
+    padding: 100px 20px; /* Espaço para não sobrepor a navbar */
+    text-align: center;
+}
+
+/* Seções organizadas em Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ---------------- FORMULÁRIOS (LOGIN E CADASTRO) ---------------- */
+.login-container, .cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.login-image, .cadastro-image {
+    flex: 1;
+    max-width: 30%;
+}
+
+.login-image img, .cadastro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* FORMULÁRIOS */
+.login-form, .cadastro-form {
+    flex: 1;
+    max-width: 400px;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos */
+    justify-content: center;
+}
+
+.login-form h2, .cadastro-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form input, .cadastro-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Botões */
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--tertiary-color);
+}
+
+/* Links */
+.login-form .signup-link, .cadastro-form .login-link {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.login-form .signup-link a, .cadastro-form .login-link a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.login-form .signup-link a:hover, .cadastro-form .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 20px;
+}
+
+/* ---------------- RESPONSIVIDADE ---------------- */
+@media screen and (max-width: 768px) {
+    /* Menu mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Conteúdo principal em 1 coluna */
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* Formulários em coluna */
+    .login-container, .cadastro-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .login-image, .cadastro-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .login-form, .cadastro-form {
+        max-width: 100%;
+    }
+}
+/* Seção de Dias de Estudo */
+.study-days, .today-content, .study-schedule, .university-choice {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.study-days ul {
+    list-style: none;
+    padding: 0;
+}
+
+.study-days li {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Estilizando Tabela de Horários */
+.study-schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.study-schedule th, .study-schedule td {
+    border: 1px solid var(--secondary-color);
+    padding: 10px;
+    text-align: center;
+}
+
+.study-schedule th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Formulário de Escolha de Faculdade */
+.university-choice form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.university-choice input {
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.university-choice button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.university-choice button:hover {
+    background-color: var(--tertiary-color);
+}
+/* ---------------- PLANOS DE ESTUDOS ---------------- */
+.study-plan {
+    padding: 40px 20px;
+    background-color: var(--light-bg);
+    text-align: center;
+    margin-top: 80px;
+}
+
+.study-plan h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.study-plan p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--dark-bg);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
+    color: var(--dark-bg);
+    margin-bottom: 5px;
+    display: block;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: var(--tertiary-color);
+}
+
+.study-plan-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.study-plan-result h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.study-plan-result p {
+    font-size: 16px;
+    color: var(--dark-bg);
+}
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px; /* Tamanho da logo */
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+/* Paleta de cores */
+:root {
+    --primary-color: #7E84F2;
+    --secondary-color: #2C96BF;
+    --tertiary-color: #82C9D9;
+    --light-bg: #CEECF2;
+    --dark-bg: #0D0D0D;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-bg);
+}
+
+/* ---------------- NAVBAR ---------------- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px; /* Tamanho da logo */
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Links da navbar */
+.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Menu responsivo */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+}
+
+/* ---------------- FORMULÁRIO DE PLANO DE ESTUDOS ---------------- */
+.study-plan {
+    padding: 80px 20px; /* Espaço para não sobrepor a navbar */
+    text-align: center;
+}
+
+.study-plan form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin: 15px 0;
+    width: 100%;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--tertiary-color);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Formulário de plano de estudos */
+    .study-plan form {
+        max-width: 100%;
+        padding: 10px;
+    }
+}

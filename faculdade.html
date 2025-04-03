@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CronoFlex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo-container">
+            <img src="clock.png" alt="Logo" class="logo"> <!-- Logo -->
+            <div class="logo-text">CronoFlex</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="faculdade.html">Faculdade</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <!-- Seção de Plano de Estudos -->
+    <section class="study-plan">
+        <h2>Plano de Estudos Personalizado</h2>
+        <p>Escolha sua faculdade, curso, cidade e horário disponível para obter um plano de estudos:</p>
+
+        <!-- Formulário de seleção -->
+        <form id="study-plan-form">
+            <div class="form-group">
+                <label for="college">Faculdade:</label>
+                <select id="college" name="college">
+                    <option value="faculdade1">Faculdade 1</option>
+                    <option value="faculdade2">Faculdade 2</option>
+                    <option value="faculdade3">Faculdade 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="city">Cidade:</label>
+                <select id="city" name="city">
+                    <option value="cidade1">Cidade 1</option>
+                    <option value="cidade2">Cidade 2</option>
+                    <option value="cidade3">Cidade 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Curso:</label>
+                <select id="course" name="course">
+                    <option value="curso1">Curso 1</option>
+                    <option value="curso2">Curso 2</option>
+                    <option value="curso3">Curso 3</option>
+                </select>
+            </div>
+
+            <!-- Novo campo para escolher horário disponível -->
+            <div class="form-group">
+                <label for="study-time">Horário disponível para estudo:</label>
+                <select id="study-time" name="study-time">
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+            </div>
+
+            <button type="submit">Gerar Plano de Estudos</button>
+        </form>
+
+        <!-- Exibição do Plano de Estudos -->
+        <div id="study-plan-result" class="study-plan-result">
+            <!-- Aqui o plano de estudos gerado será mostrado -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Site Interativo. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

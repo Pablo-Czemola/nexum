@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CronoFlex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">CronoFlex</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="faculdade.html">Faculdade</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <section class="main-content">
+        <h1>Bem-vindo ao nosso Site!</h1>
+        <p>Sua plataforma preferida para estudos.</p>
+    </section>
+
+    <!-- Dias de Estudo -->
+    <section class="study-days">
+        <h2>📆 Dias de Estudo</h2>
+        <ul>
+            <li>Segunda-feira</li>
+            <li>Terça-feira</li>
+            <li>Quarta-feira</li>
+            <li>Quinta-feira</li>
+            <li>Sexta-feira</li>
+        </ul>
+    </section>
+
+    <!-- Conteúdo de Hoje -->
+    <section class="today-content">
+        <h2>📖 Conteúdo de Hoje</h2>
+        <p id="content-text">Carregando...</p>
+    </section>
+
+    <!-- Horários de Estudo -->
+    <section class="study-schedule">
+        <h2>⏰ Horário de Estudos</h2>
+        <table>
+            <tr>
+                <th>Horário</th>
+                <th>Matéria</th>
+            </tr>
+            <tr>
+                <td>08:00 - 09:30</td>
+                <td>Matemática</td>
+            </tr>
+            <tr>
+                <td>10:00 - 11:30</td>
+                <td>Português</td>
+            </tr>
+            <tr>
+                <td>14:00 - 15:30</td>
+                <td>Programação</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Escolha de Faculdade -->
+    <section class="university-choice">
+        <h2>🎓 Escolha sua Faculdade</h2>
+        <form>
+            <label for="faculdade">Faculdade:</label>
+            <input type="text" id="faculdade" placeholder="Digite o nome da faculdade">
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" placeholder="Digite a cidade">
+
+            <label for="curso">Curso:</label>
+            <input type="text" id="curso" placeholder="Digite o curso desejado">
+
+            <button type="submit">Salvar Escolha</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Site Interativo. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
